@@ -1,4 +1,4 @@
-# Translator_Binary-to-Text
+# Translator_Binary-Text
 
 ## Clone :
 
