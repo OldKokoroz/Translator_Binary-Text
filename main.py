@@ -1,6 +1,6 @@
-import time, sys
 
-x = input("\n\nWould you like to Encode (e) or Decode (d) ? :  ")
+import time
+import sys
 
 
 def encode():
@@ -12,7 +12,7 @@ def encode():
 
     time.sleep(1)
 
-    print(f"\nMessage : {message} \nBinary Code : {binary}")
+    print(f"\nMessage     : {message} \n\nBinary Code : {binary}")
 
 
 def decode():
@@ -20,25 +20,54 @@ def decode():
 
     time.sleep(1)
 
-    normal = "".join(chr(int(k, 2)) for k in binary_text.split(" "))
+    if binary_text is int:
+        time.sleep(1)
 
-    time.sleep(1)
+        normal = "".join(chr(int(k, 2)) for k in binary_text.split(" "))
 
-    print(f"\nBinary Code : {binary_text} \nMessage : {normal}")
+        time.sleep(1.5)
+
+        print(f"\nBinary Code : {binary_text} \n\nMessage     : {normal}")
+
+    else:
+        time.sleep(1)
+        print("\nPlease Give a Binary Code !!")
+
+
+time.sleep(1)
+
+print("\n#____________________________START____________________________#")
+
+time.sleep(1)
+
+x = input("""\nModes: \n
+    E  -->  Encode    |    D  -->  Decode    |    Q  -->  Exit
+    ---------------        ---------------        -------------
+\nChoice : """)
+
+x = x.lower()
 
 
 if x == "e":
-    print("\nEncoder Started")
+    time.sleep(1)
+    print("\n------ Encoder Started -----")
     time.sleep(1)
     encode()
 
 elif x == "d":
+    time.sleep(1)
     print("\nDecoder Started")
     time.sleep(1)
     decode()
 
+elif x == "q":
+    time.sleep(1)
+    print("\nDecoder Started")
+    time.sleep(1)
+    sys.exit(1)
+
 else:
     time.sleep(1)
-    print("\nPlease enter e or d")
+    print("\nInvalid Input")
 
-print("\n#_____________________________END________________________________________#")
+print("\n#_____________________________END_____________________________#\n")
