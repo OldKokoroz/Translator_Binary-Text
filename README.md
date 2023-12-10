@@ -1,3 +1,6 @@
+# Translator
+
+
 ## Clone :
 
     git clone https://github.com/OldKokoroz/Translator_Binary-to-Text.git
@@ -10,6 +13,7 @@
 
 python3 BinaryText.py 
 
+(While using in the terminal Be careful that there is no empty space after file path )
 
 ## Modes : 
 
