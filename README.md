@@ -1,6 +1,5 @@
 # Translator
 
-
 ## Clone :
 
     git clone https://github.com/OldKokoroz/Translator_Binary-to-Text.git
