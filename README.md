@@ -1,5 +1,3 @@
-# Translator_Binary-Text
-
 ## Clone :
 
     git clone https://github.com/OldKokoroz/Translator_Binary-to-Text.git
@@ -10,10 +8,23 @@
 
 ## Usage :
 
-python BinaryText.py 
+python3 BinaryText.py 
 
-"e" --> Encode
 
-"d" --> Decode
+## Modes : 
 
-After choosing the mode, enter the text you want to translate.
+   "e" --> Encode
+
+   "d" --> Decode
+
+   "fe" --> File Encode
+
+   "fd" --> File Decode
+
+
+## Images 
+
+![File to Encode / Decode](message_file.JPG)
+
+
+![Output](binary_output.JPG)
