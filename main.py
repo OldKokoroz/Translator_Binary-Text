@@ -14,6 +14,8 @@ def encode():
 
     enc_out = f"\nMessage     : {message} \n\nBinary Code : {binary}"
 
+    print(enc_out)
+
 
 def decode():
     binary_text = input("\nWhat is the code you want to decode? : ")
@@ -25,6 +27,8 @@ def decode():
     time.sleep(1.5)
 
     dec_out = f"\nBinary Code : {binary_text} \n\nMessage     : {normal}"
+
+    print(dec_out)
 
 
 def file_encode():
@@ -70,47 +74,48 @@ print("\n#____________________________START____________________________#")
 
 time.sleep(1)
 
-x = input("""\nModes: \n
-    E  -->  Encode    |    D  -->  Decode    |    FE  --> File Encode    |    FD  --> File Decode    |    Q  -->  Exit      
-    ---------------        ---------------        --------------------        --------------------        ------------- 
-\nChoice : """)
+while True:
+    start = input('''
+|----------MODES----------|
+| 1 - Encode              |
+| 2 - Decode              |
+| 3 - File Encode         |
+| 4 - File Decode         |
+| 5 - Exit                |
+|-------------------------|
+|-> ''')
 
+    if start == "1":
+        time.sleep(1)
+        print("\n------ Encoder Started ------")
+        time.sleep(1)
+        encode()
 
-x = x.lower()
+    elif start == "2":
+        time.sleep(1)
+        print("\n------ Decoder Started ------")
+        time.sleep(1)
+        decode()
 
+    elif start == "3":
+        time.sleep(1)
+        print("\n------ File Encoder Started ------")
+        time.sleep(1)
+        file_encode()
 
-if x == "e":
-    time.sleep(1)
-    print("\n------ Encoder Started -----")
-    time.sleep(1)
-    encode()
+    elif start == "4":
+        time.sleep(1)
+        print("\n------ File Decoder Started ------")
+        time.sleep(1)
+        file_decode()
 
-elif x == "d":
-    time.sleep(1)
-    print("\n------ Decoder Started -----")
-    time.sleep(1)
-    decode()
+    elif start == "5":
+        time.sleep(1)
+        print("\n#_____________________________END_____________________________#\n")
+        time.sleep(1)
+        sys.exit(0)
 
-elif x == "fe":
-    time.sleep(1)
-    print("\n------ File Encoder Started -----")
-    time.sleep(1)
-    file_encode()
-
-elif x == "fd":
-    time.sleep(1)
-    print("\n------ File Decoder Started -----")
-    time.sleep(1)
-    file_decode()
-
-elif x == "q":
-    time.sleep(1)
-    print("\nAlright, Out...")
-    time.sleep(1)
-    sys.exit(1)
-
-else:
-    time.sleep(1)
-    print("\nInvalid Input")
-
-print("\n#_____________________________END_____________________________#\n")
+    else:
+        time.sleep(1)
+        print("\nInvalid Input")
+        break
