@@ -87,19 +87,19 @@ if x == "e":
 
 elif x == "d":
     time.sleep(1)
-    print("\nDecoder Started")
+    print("\n------ Decoder Started -----")
     time.sleep(1)
     decode()
 
 elif x == "fe":
     time.sleep(1)
-    print("\nFile Encoder Started")
+    print("\n------ File Encoder Started -----")
     time.sleep(1)
     file_encode()
 
 elif x == "fd":
     time.sleep(1)
-    print("\nFile Decoder Started")
+    print("\n------ File Decoder Started -----")
     time.sleep(1)
     file_decode()
 
