@@ -16,13 +16,13 @@ python3 BinaryText.py
 
 ## Modes : 
 
-   "e" --> Encode
+   1 --> Encode
 
-   "d" --> Decode
+   2 --> Decode
 
-   "fe" --> File Encode
+   3 --> File Encode
 
-   "fd" --> File Decode
+   4 --> File Decode
 
 
 ## Images 
