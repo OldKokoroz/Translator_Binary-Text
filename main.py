@@ -83,7 +83,7 @@ def file_encode():
     if out_choice_en in [" ", ""]:
         out_choice_en = fil_en
 
-    out_en = open(out_choice_en, 'w')
+    out_en = open(out_choice_en, 'a')
     out_en.write(normal_in)
 
     print("PROCESS DONE !")
@@ -106,7 +106,7 @@ def file_decode():
     if out_choice_de in [" ", ""]:
         out_choice_de = fil_de
 
-    out_de = open(out_choice_de, 'w')
+    out_de = open(out_choice_de, 'a')
     out_de.write(normal_out)
 
     print("PROCESS DONE !")
