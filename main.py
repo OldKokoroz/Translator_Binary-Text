@@ -1,10 +1,30 @@
-
-import time
+import os
 import sys
+import time
+from time import strftime, localtime
+
+
+def keep_log(a, b):
+    current_date = strftime("%d.%m.%Y - %H:%M:%S", localtime())
+
+    base = f"""
+{current_date}                                       {os.getuid()} 
+================================================================
+Message : {a}
+    
+Code    : {b}
+================================================================
+\n"""
+
+    with open("translate-log.txt", "a") as log:
+        log.write(base)
 
 
 def encode():
     message = input("\nWhat is the message you want to convert? : ")
+
+    if message == "99":
+        exit()
 
     time.sleep(1)
 
@@ -16,19 +36,36 @@ def encode():
 
     print(enc_out)
 
+    keep_log(message, binary)
+
 
 def decode():
     binary_text = input("\nWhat is the code you want to decode? : ")
 
-    time.sleep(1)
+    if binary_text == "99":
+        exit()
 
-    normal = "".join(chr(int(k, 2)) for k in binary_text.split(" "))
+    for _ in binary_text:
+        if not binary_text.isdigit():
+            print("\nPlease enter a binary code !")
 
-    time.sleep(1.5)
+        if _ not in ["1", "0"]:
+            print("\nBinary Code must contain 1 and 0 !")
+            break
+        exit()
 
-    dec_out = f"\nBinary Code : {binary_text} \n\nMessage     : {normal}"
+    else:
+        time.sleep(1)
 
-    print(dec_out)
+        normal = "".join(chr(int(k, 2)) for k in binary_text.split(" "))
+
+        time.sleep(1.5)
+
+        dec_out = f"\nBinary Code : {binary_text} \n\nMessage     : {normal}"
+
+        print(dec_out)
+
+        keep_log(normal, binary_text)
 
 
 def file_encode():
@@ -43,10 +80,15 @@ def file_encode():
 
     out_choice_en = input("\nPath of the output file : ")
 
+    if out_choice_en in [" ", ""]:
+        out_choice_en = fil_en
+
     out_en = open(out_choice_en, 'w')
     out_en.write(normal_in)
 
     print("PROCESS DONE !")
+
+    keep_log(fil_en, out_choice_en)
 
 
 def file_decode():
@@ -61,10 +103,15 @@ def file_decode():
 
     out_choice_de = input("\nPath of the output file : ")
 
+    if out_choice_de in [" ", ""]:
+        out_choice_de = fil_de
+
     out_de = open(out_choice_de, 'w')
     out_de.write(normal_out)
 
     print("PROCESS DONE !")
+
+    keep_log(out_choice_de, fil_de)
 
 
 time.sleep(1)
@@ -77,11 +124,11 @@ time.sleep(1)
 while True:
     start = input('''
 |----------MODES----------|
-| 1 - Encode              |
-| 2 - Decode              |
-| 3 - File Encode         |
-| 4 - File Decode         |
-| 5 - Exit                |
+| 1  - Encode             |
+| 2  - Decode             |
+| 3  - File Encode        |
+| 4  - File Decode        |
+| 99 - Exit               |
 |-------------------------|
 |-> ''')
 
@@ -117,5 +164,4 @@ while True:
 
     else:
         time.sleep(1)
-        print("\nInvalid Input")
-        break
+        print("\nInvalid Input !")
