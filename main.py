@@ -8,7 +8,7 @@ def keep_log(a, b):
     current_date = strftime("%d.%m.%Y - %H:%M:%S", localtime())
 
     base = f"""
-{current_date}                                       {os.getuid()} 
+{current_date}                                        {os.getuid()} 
 ================================================================
 Message : {a}
     
